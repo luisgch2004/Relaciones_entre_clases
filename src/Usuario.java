@@ -27,12 +27,12 @@ public class Usuario {
         return documento;
     }
 
-    public Usuario(String paterno, String materno, String nombres, String documento, int numero, float saldo, boolean estado, float precio) {
+    public Usuario(String paterno, String materno, String nombres, String documento, int numero, float saldo, boolean activo, float precio) {
         this.paterno = paterno;
         this.materno = materno;
         this.nombre = nombres;
         this.documento = documento;
-        this.tarjeta = new Tarjeta(numero, saldo);
+        this.tarjeta = new Tarjeta(numero, saldo, activo, precio);
     }
     public void setTipoUsuario(tipoUsuario tipoUsuario) {
         this.tipoUsuario = tipoUsuario;

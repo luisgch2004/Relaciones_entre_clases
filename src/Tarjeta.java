@@ -4,9 +4,11 @@ public class Tarjeta {
     private boolean activo;
     private float precio;
 
-    public Tarjeta(int numero, float saldo) {
+    public Tarjeta(int numero, float saldo, boolean activo, float precio) {
         this.numero = numero;
         this.saldo = saldo;
+        this.activo = activo;
+        this.precio = precio;
     }
 
     public Tarjeta(int numero) {
