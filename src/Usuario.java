@@ -11,6 +11,22 @@ public class Usuario {
         System.out.println("---Ingreso de datos del usuario---");
     }
 
+    public String getPaterno() {
+        return paterno;
+    }
+
+    public String getMaterno() {
+        return materno;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
     public Usuario(String paterno, String materno, String nombres, String documento, int numero, float saldo, boolean estado, float precio) {
         this.paterno = paterno;
         this.materno = materno;
@@ -40,14 +56,5 @@ public class Usuario {
         return tipoUsuario;
     }
 
-    public void mostrarInfo(){
-        System.out.println("---Resumen del registro---");
-        System.out.println("Apellido paterno: " + paterno);
-        System.out.println("Apellido materno: " + materno);
-        System.out.println("Nombres: " +    nombre);
-        System.out.println("Documento: " + documento);
-        System.out.println("Saldo de la tarjeta: " + tarjeta.getSaldo());
-        System.out.println("Tipo de usuario: " + tipoUsuario.getNombre());
-        System.out.println("Estado del usuario: " + tipoUsuario.isEstado());
-    }
+
 }

@@ -26,28 +26,39 @@ public class App {
         System.out.print("Ingrese el esatdo del usuario (true/false): ");
         boolean Estado = consola.nextBoolean();
         var tipo = new tipoUsuario(nombre, Estado);
+        Usuario.setTipoUsuario(tipo);
         var User = new Usuario(paterno, materno, nombres, documento, numero, saldo, estado, precio);
+        System.out.println("\nInformación inicial del usuario:");
+        System.out.println("---Resumen del registro---");
+        System.out.println("Apellido paterno: " + User.getPaterno());
+        System.out.println("Apellido materno: " + User.getMaterno());
+        System.out.println("Nombres: " + User.getNombre());
+        System.out.println("Documento: " + User.getDocumento());
+        System.out.println("Saldo de la tarjeta: " + User.mostrarSaldo());
+        System.out.println("Tipo de usuario: " + tipo.getNombre());
+        System.out.println("Estado del usuario: " + tipo.isEstado());
         System.out.println("Operaciones con la tarjeta");
         System.out.println("---Recarga---");
         System.out.print("Ingrese el monto a recargar: ");
         var monto = consola.nextFloat();
-        var recarga = Usuario.recargar(monto);
+        var recarga = User.recargar(monto);
         if (recarga == true){
-            System.out.println("Recarga exitosa, saldo actual: " + Usuario.mostrarSaldo());
+            System.out.println("Recarga exitosa, saldo actual: " + User.mostrarSaldo());
         }
         else{
             System.out.println("Recarga fallida");
         }
+        System.out.println("Saldo de la tarjeta: " + User.mostrarSaldo());
         System.out.println("---Consumo---");
         System.out.print("Ingrese el gasto: ");
         var gasto = consola.nextFloat();
-        var consumo = Usuario.consumir(gasto);
+        var consumo = User.consumir(gasto);
         if (consumo == true){
-            System.out.println("gasto con exito, saldo actual: " + Usuario.mostrarSaldo());
+            System.out.println("gasto con exito, saldo actual: " + User.mostrarSaldo());
         }
         else{
             System.out.println("gasto fallido");
         }
-        Usuario.mostrarInfo();
+        System.out.println("Saldo de la tarjeta: " + User.mostrarSaldo());
     }
 }
